@@ -1,0 +1,8 @@
+build/*
+coverage/*
+coverage.json
+node_modules/*
+
+.idea/
+.vscode/
+.DS_Store

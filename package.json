@@ -1,0 +1,34 @@
+{
+  "name": "solidity-data-structures",
+  "version": "1.0.0",
+  "description": "A collection of basic data structures implemented in solidity",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis/solidity-data-structures.git"
+  },
+  "keywords": [
+    "soldity",
+    "data-structures"
+  ],
+  "author": "Gnosis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnosis/solidity-data-structures/issues"
+  },
+  "homepage": "https://github.com/gnosis/solidity-data-structures#readme",
+  "dependencies": {
+    "truffle": "^5.0.34"
+  },
+  "devDependencies": {
+    "truffle-assertions": "^0.9.1",
+    "truffle": "^5.0.34",
+    "solidity-coverage": "^0.5.11"
+  }
+}
