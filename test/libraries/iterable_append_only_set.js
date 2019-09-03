@@ -36,6 +36,21 @@ contract("IterableSet", function (accounts) {
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
   })
 
+  it("should keep track of the size", async () => {
+    const set = await IterableSet.new()
+    assert.equal((await set.size()).toNumber(), 0)
+
+    await set.insert(accounts[0])
+    assert.equal((await set.size()).toNumber(), 1)
+
+    await set.insert(accounts[1])
+    assert.equal((await set.size()).toNumber(), 2)
+
+    // re-add already existing address[0]
+    await set.insert(accounts[0])
+    assert.equal((await set.size()).toNumber(), 2)
+  })
+
   it("should insert the same value only once", async () => {
     const set = await IterableSet.new()
 

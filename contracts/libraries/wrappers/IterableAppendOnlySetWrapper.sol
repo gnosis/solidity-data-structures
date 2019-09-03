@@ -23,6 +23,10 @@ contract IterableAppendOnlySetWrapper {
         return data.last;
     }
 
+    function size() public view returns (uint256) {
+        return data.size();
+    }
+
     function next(address value) public view returns (address) {
         return data.next(value);
     }
