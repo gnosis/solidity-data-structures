@@ -1,5 +1,5 @@
-const IterableSetLib = artifacts.require(".libraries/IterableAppendOnlySet.sol");
-const IterableSet = artifacts.require(".libraries/wrappers/IterableAppendOnlySetWrapper.sol");
+const IterableSetLib = artifacts.require(".libraries/IterableAppendOnlySet.sol")
+const IterableSet = artifacts.require(".libraries/wrappers/IterableAppendOnlySetWrapper.sol")
 
 const truffleAssert = require("truffle-assertions")
 
@@ -12,14 +12,14 @@ async function getSetContent(set) {
     let current = await set.first()
     result.push(current)
     while (current != last) {
-      current = await set.next(current);
+      current = await set.next(current)
       result.push(current)
     }
   }
   return result
 }
 
-contract('IterableSet', function (accounts) {
+contract("IterableSet", function (accounts) {
   beforeEach(async () => {
     const lib = await IterableSetLib.new()
     await IterableSet.link(IterableSetLib, lib.address)
@@ -34,7 +34,7 @@ contract('IterableSet', function (accounts) {
 
     assert.equal(await set.contains(accounts[0]), true, "The element should be there")
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
-  });
+  })
 
   it("should insert the same value only once", async () => {
     const set = await IterableSet.new()
@@ -46,7 +46,7 @@ contract('IterableSet', function (accounts) {
     assert.equal(await set.insert.call(accounts[0]), false, "Second insert should do nothing")
     await set.insert(accounts[0])
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
-  });
+  })
 
   it("should return first and last element", async () => {
     const set = await IterableSet.new()
@@ -99,4 +99,4 @@ contract('IterableSet', function (accounts) {
     await set.insert(accounts[0])
     await truffleAssert.reverts(set.next(accounts[0]))
   })
-});
+})

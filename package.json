@@ -1,5 +1,5 @@
 {
-  "name": "solidity-data-structures",
+  "name": "@gnosis.pm/solidity-data-structures",
   "version": "1.0.0",
   "description": "A collection of basic data structures implemented in solidity",
   "main": "truffle-config.js",
@@ -7,7 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npx truffle test"
+    "test": "npx truffle test",
+    "coverage": "./node_modules/.bin/solidity-coverage",
+    "lint": "./node_modules/.bin/eslint .",
+    "solhint": "./node_modules/.bin/solhint \"contracts/**/*.sol\""
   },
   "repository": {
     "type": "git",
@@ -27,8 +30,11 @@
     "truffle": "^5.0.34"
   },
   "devDependencies": {
-    "truffle-assertions": "^0.9.1",
+    "coveralls": "^3.0.4",
+    "eslint": "^5.12.0",
+    "eslint-plugin-no-only-tests": "^2.3.0",
+    "eslint-plugin-react": "^7.12.3",
     "truffle": "^5.0.34",
-    "solidity-coverage": "^0.5.11"
+    "truffle-assertions": "^0.9.1"
   }
 }
