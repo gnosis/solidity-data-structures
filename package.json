@@ -35,6 +35,7 @@
     "eslint-plugin-no-only-tests": "^2.3.0",
     "eslint-plugin-react": "^7.12.3",
     "truffle": "^5.0.34",
-    "truffle-assertions": "^0.9.1"
+    "truffle-assertions": "^0.9.1",
+    "solhint": "^1.5.0"
   }
 }

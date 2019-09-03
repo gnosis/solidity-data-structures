@@ -2,6 +2,7 @@ pragma solidity ^0.5.0;
 
 import "../IterableAppendOnlySet.sol";
 
+
 contract IterableAppendOnlySetWrapper {
     IterableAppendOnlySet.Data private data;
     using IterableAppendOnlySet for IterableAppendOnlySet.Data;
