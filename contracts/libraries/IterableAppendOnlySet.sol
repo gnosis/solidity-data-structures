@@ -31,4 +31,17 @@ library IterableAppendOnlySet {
         require(value != self.last, "Trying to get next of last element");
         return self.nextMap[value];
     }
+
+    function size(Data storage self) public view returns (uint256) {
+        if (self.last == address(0)) {
+            return 0;
+        }
+        uint256 count = 1;
+        address current = first(self);
+        while(current != self.last) {
+            current = next(self, current);
+            count ++;
+        }
+        return count;
+    }
 }
