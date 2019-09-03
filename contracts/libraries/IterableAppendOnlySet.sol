@@ -38,9 +38,9 @@ library IterableAppendOnlySet {
         }
         uint256 count = 1;
         address current = first(self);
-        while(current != self.last) {
+        while (current != self.last) {
             current = next(self, current);
-            count ++;
+            count++;
         }
         return count;
     }
