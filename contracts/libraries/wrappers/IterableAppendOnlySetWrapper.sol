@@ -18,7 +18,7 @@ contract IterableAppendOnlySetWrapper {
     function first() public view returns (address) {
         return data.first();
     }
-    
+
     function last() public view returns (address) {
         return data.last;
     }

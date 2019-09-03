@@ -19,7 +19,6 @@ library IterableAppendOnlySet {
     function contains(Data storage self, address value) public view returns (bool) {
         require(value != address(0), "Inserting address(0) is not supported");
         return self.nextMap[value] != address(0) || (self.last == value);
-    
     }
 
     function first(Data storage self) public view returns (address) {
