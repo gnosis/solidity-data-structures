@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/gnosis/solidity-data-structures#readme",
   "dependencies": {
+    "ethereumjs-util": "^6.1.0",
+    "merkletreejs": "0.0.22",
     "truffle": "^5.0.34"
   },
   "devDependencies": {
