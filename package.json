@@ -27,12 +27,14 @@
   },
   "homepage": "https://github.com/gnosis/solidity-data-structures#readme",
   "dependencies": {
+    "@gnosis.pm/util-contracts": "^2.0.1",
     "ethereumjs-util": "^6.1.0",
     "merkletreejs": "0.0.22",
     "truffle": "^5.0.34"
   },
   "devDependencies": {
     "coveralls": "^3.0.4",
+    "dotenv": "^8.0.0",
     "eslint": "^5.12.0",
     "eslint-plugin-no-only-tests": "^2.3.0",
     "eslint-plugin-react": "^7.12.3",
@@ -40,6 +42,7 @@
     "truffle-assertions": "^0.9.1",
     "solidity-coverage": "^0.5.11",
     "solhint": "^1.5.0",
-    "solium": "^1.2.4"
+    "solium": "^1.2.4",
+    "truffle-hdwallet-provider": "^1.0.0-web3one.1"
   }
 }
