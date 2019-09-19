@@ -15,13 +15,8 @@ if (!privateKey && !mnemonic) {
 }
 
 // Solc
-const compatibilityTruffle4 = false
-let solcUseDocker, solcVersion
-if (!compatibilityTruffle4) {
-  // Use truffle 5
-  solcUseDocker = process.env.SOLC_USE_DOCKER === 'true' || false
-  solcVersion = '<0.5.5'
-}
+let solcUseDocker = process.env.SOLC_USE_DOCKER === 'true' || false
+let solcVersion = '<0.5.5'
 
 // Gas price
 const gasPriceGWei = process.env.GAS_PRICE_GWEI || DEFAULT_GAS_PRICE_GWEI
