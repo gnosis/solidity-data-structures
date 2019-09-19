@@ -46,8 +46,7 @@ module.exports = {
     additionalNetwork,
     optimizedEnabled: true,
     solcUseDocker,
-    solcVersion,
-    compatibilityTruffle4
+    solcVersion
   }),
   // https://github.com/mochajs/mocha/wiki/Using-mocha-programmatically#set-options
   mocha: {
