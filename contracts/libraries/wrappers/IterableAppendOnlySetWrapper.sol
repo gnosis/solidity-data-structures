@@ -30,4 +30,8 @@ contract IterableAppendOnlySetWrapper {
     function next(address value) public view returns (address) {
         return data.next(value);
     }
+
+    function atIndex(uint256 index) public view returns (address) {
+        return data.atIndex(index);
+    }
 }
