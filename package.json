@@ -29,8 +29,7 @@
   "dependencies": {
     "@gnosis.pm/util-contracts": "^2.0.2",
     "ethereumjs-util": "^6.1.0",
-    "merkletreejs": "0.0.22",
-    "truffle": "^5.0.34"
+    "merkletreejs": "0.0.22"
   },
   "devDependencies": {
     "coveralls": "^3.0.4",
