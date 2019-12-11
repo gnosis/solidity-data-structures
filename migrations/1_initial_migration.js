@@ -7,7 +7,6 @@ const IterableSetLib = artifacts.require(
 
 module.exports = async function(deployer) {
   await deployer.deploy(Migrations)
-
   await deployer.deploy(BiMap)
   await deployer.deploy(IterableSetLib)
-};
+}
