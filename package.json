@@ -38,11 +38,11 @@
     "eslint": "^5.12.0",
     "eslint-plugin-no-only-tests": "^2.3.0",
     "eslint-plugin-react": "^7.12.3",
+    "solhint": "^1.5.0",
+    "solidity-coverage": "^0.6.7",
+    "solium": "^1.2.4",
     "truffle": "^5.0.34",
     "truffle-assertions": "^0.9.1",
-    "solidity-coverage": "^0.5.11",
-    "solhint": "^1.5.0",
-    "solium": "^1.2.4",
     "truffle-hdwallet-provider": "^1.0.0-web3one.1"
   }
 }
