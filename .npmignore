@@ -1,13 +1,5 @@
 .DS_STORE
 .history
 
-travscripts/*
-.gitattributes
-.solcover.js
+coverage/*
 .travis.yml
-*.pyc
-yarn-error.log
-
-.awcache
-.eslintcache
-.stylelintcache
