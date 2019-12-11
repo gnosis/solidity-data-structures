@@ -4,7 +4,7 @@ node_js:
 before_install:
   - rm -rf node_modules
 install:
-  - yarn install -g ganache-cli
+  - yarn global add ganache-cli
   - yarn install
 before_script:
   - ganache-cli > /dev/null &
