@@ -1,0 +1,13 @@
+.DS_STORE
+.history
+
+travscripts/*
+.gitattributes
+.solcover.js
+.travis.yml
+*.pyc
+yarn-error.log
+
+.awcache
+.eslintcache
+.stylelintcache
