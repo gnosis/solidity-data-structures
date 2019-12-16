@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/solidity-data-structures",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "A collection of basic data structures implemented in solidity",
   "main": "truffle-config.js",
   "directories": {
@@ -9,6 +9,8 @@
   "scripts": {
     "test": "npx truffle test",
     "coverage": "./node_modules/.bin/solidity-coverage",
+    "networks-extract": "CONF_FILE=$(pwd)'/migration_conf.js'  node node_modules/@gnosis.pm/util-contracts/src/extract_network_info.js",
+    "networks-inject": "CONF_FILE=$(pwd)'/migration_conf.js'  node node_modules/@gnosis.pm/util-contracts/src/inject_network_info.js",
     "lint": "./node_modules/.bin/eslint .",
     "solhint": "./node_modules/.bin/solhint \"contracts/**/*.sol\""
   },
@@ -27,7 +29,7 @@
   },
   "homepage": "https://github.com/gnosis/solidity-data-structures#readme",
   "dependencies": {
-    "@gnosis.pm/util-contracts": "^2.0.2",
+    "@gnosis.pm/util-contracts": "^2.0.4",
     "ethereumjs-util": "^6.1.0",
     "merkletreejs": "0.0.22"
   },
@@ -37,11 +39,11 @@
     "eslint": "^5.12.0",
     "eslint-plugin-no-only-tests": "^2.3.0",
     "eslint-plugin-react": "^7.12.3",
+    "solhint": "^1.5.0",
+    "solidity-coverage": "^0.6.7",
+    "solium": "^1.2.4",
     "truffle": "^5.0.34",
     "truffle-assertions": "^0.9.1",
-    "solidity-coverage": "^0.5.11",
-    "solhint": "^1.5.0",
-    "solium": "^1.2.4",
     "truffle-hdwallet-provider": "^1.0.0-web3one.1"
   }
 }
