@@ -26,6 +26,8 @@ library IdToAddressBiMap {
     }
 
     function insert(Data storage self, uint16 id, address addr) public returns (bool) {
+        require(addr != address(0), "Cannot insert zero address");
+        require(id != uint16(-1), "Cannot insert max uint16");
         // Ensure bijectivity of the mappings
         if (self.addressToId[addr] != 0 || self.idToAddress[id + 1] != address(0)) {
             return false;
