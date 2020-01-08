@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/solidity-data-structures",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "A collection of basic data structures implemented in solidity",
   "main": "truffle-config.js",
   "directories": {
@@ -9,6 +9,8 @@
   "scripts": {
     "test": "npx truffle test",
     "coverage": "./node_modules/.bin/solidity-coverage",
+    "networks-extract": "CONF_FILE=$(pwd)'/migration_conf.js'  node node_modules/@gnosis.pm/util-contracts/src/extract_network_info.js",
+    "networks-inject": "CONF_FILE=$(pwd)'/migration_conf.js'  node node_modules/@gnosis.pm/util-contracts/src/inject_network_info.js",
     "lint": "./node_modules/.bin/eslint .",
     "solhint": "./node_modules/.bin/solhint \"contracts/**/*.sol\""
   },
@@ -27,10 +29,9 @@
   },
   "homepage": "https://github.com/gnosis/solidity-data-structures#readme",
   "dependencies": {
-    "@gnosis.pm/util-contracts": "^2.0.2",
+    "@gnosis.pm/util-contracts": "^2.0.4",
     "ethereumjs-util": "^6.1.0",
-    "merkletreejs": "0.0.22",
-    "truffle": "^5.0.34"
+    "merkletreejs": "0.0.22"
   },
   "devDependencies": {
     "coveralls": "^3.0.4",

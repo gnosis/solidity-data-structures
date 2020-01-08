@@ -44,4 +44,13 @@ library IterableAppendOnlySet {
         }
         return count;
     }
+
+    function atIndex(Data storage self, uint256 index) public view returns (address) {
+        require(index < size(self), "requested index too large");
+        address res = first(self);
+        for (uint256 i = 0; i < index; i++) {
+            res = next(self, res);
+        }
+        return res;
+    }
 }

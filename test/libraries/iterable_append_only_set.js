@@ -114,4 +114,25 @@ contract("IterableSet", function (accounts) {
     await set.insert(accounts[0])
     await truffleAssert.reverts(set.next(accounts[0]))
   })
+
+  it("fetches elements at index (by insertion order)", async () => {
+    const set = await IterableSet.new()
+
+    await set.insert(accounts[0])
+    await set.insert(accounts[1])
+
+    assert.equal(await set.atIndex(0), accounts[0])
+    assert.equal(await set.atIndex(1), accounts[1])
+  })
+  it("fails to fetches at index when requested index is too large", async () => {
+    const set = await IterableSet.new()
+
+    // Nothing in the set yet!
+    await truffleAssert.reverts(set.atIndex(0))
+
+    await set.insert(accounts[0])
+    await truffleAssert.reverts(set.atIndex(1))
+  })
+
+
 })
