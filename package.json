@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/solidity-data-structures",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A collection of basic data structures implemented in solidity",
   "main": "truffle-config.js",
   "directories": {
