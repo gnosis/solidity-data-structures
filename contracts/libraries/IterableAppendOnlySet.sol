@@ -5,6 +5,7 @@ library IterableAppendOnlySet {
     struct Data {
         mapping(address => address) nextMap;
         address last;
+        uint96 size; // width is chosen to align struct size to full words
     }
 
     function insert(Data storage self, address value) public returns (bool) {
@@ -13,6 +14,7 @@ library IterableAppendOnlySet {
         }
         self.nextMap[self.last] = value;
         self.last = value;
+        self.size += 1;
         return true;
     }
 
@@ -30,27 +32,5 @@ library IterableAppendOnlySet {
         require(contains(self, value), "Trying to get next of non-existent element");
         require(value != self.last, "Trying to get next of last element");
         return self.nextMap[value];
-    }
-
-    function size(Data storage self) public view returns (uint256) {
-        if (self.last == address(0)) {
-            return 0;
-        }
-        uint256 count = 1;
-        address current = first(self);
-        while (current != self.last) {
-            current = next(self, current);
-            count++;
-        }
-        return count;
-    }
-
-    function atIndex(Data storage self, uint256 index) public view returns (address) {
-        require(index < size(self), "requested index too large");
-        address res = first(self);
-        for (uint256 i = 0; i < index; i++) {
-            res = next(self, res);
-        }
-        return res;
     }
 }

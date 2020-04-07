@@ -1,5 +1,7 @@
 const IterableSetLib = artifacts.require(".libraries/IterableAppendOnlySet.sol")
-const IterableSet = artifacts.require(".libraries/wrappers/IterableAppendOnlySetWrapper.sol")
+const IterableSet = artifacts.require(
+  ".libraries/wrappers/IterableAppendOnlySetWrapper.sol"
+)
 
 const truffleAssert = require("truffle-assertions")
 
@@ -19,7 +21,7 @@ async function getSetContent(set) {
   return result
 }
 
-contract("IterableSet", function (accounts) {
+contract("IterableSet", function(accounts) {
   beforeEach(async () => {
     const lib = await IterableSetLib.new()
     await IterableSet.link(IterableSetLib, lib.address)
@@ -29,10 +31,18 @@ contract("IterableSet", function (accounts) {
     const set = await IterableSet.new()
     assert.deepEqual(await getSetContent(set), [])
 
-    assert.equal(await set.contains(accounts[0]), false, "The element should not be there")
+    assert.equal(
+      await set.contains(accounts[0]),
+      false,
+      "The element should not be there"
+    )
     await set.insert(accounts[0])
 
-    assert.equal(await set.contains(accounts[0]), true, "The element should be there")
+    assert.equal(
+      await set.contains(accounts[0]),
+      true,
+      "The element should be there"
+    )
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
   })
 
@@ -54,11 +64,19 @@ contract("IterableSet", function (accounts) {
   it("should insert the same value only once", async () => {
     const set = await IterableSet.new()
 
-    assert.equal(await set.insert.call(accounts[0]), true, "First insert should insert")
+    assert.equal(
+      await set.insert.call(accounts[0]),
+      true,
+      "First insert should insert"
+    )
     await set.insert(accounts[0])
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
 
-    assert.equal(await set.insert.call(accounts[0]), false, "Second insert should do nothing")
+    assert.equal(
+      await set.insert.call(accounts[0]),
+      false,
+      "Second insert should do nothing"
+    )
     await set.insert(accounts[0])
     assert.deepEqual(await getSetContent(set), accounts.slice(0, 1))
   })
@@ -114,25 +132,4 @@ contract("IterableSet", function (accounts) {
     await set.insert(accounts[0])
     await truffleAssert.reverts(set.next(accounts[0]))
   })
-
-  it("fetches elements at index (by insertion order)", async () => {
-    const set = await IterableSet.new()
-
-    await set.insert(accounts[0])
-    await set.insert(accounts[1])
-
-    assert.equal(await set.atIndex(0), accounts[0])
-    assert.equal(await set.atIndex(1), accounts[1])
-  })
-  it("fails to fetches at index when requested index is too large", async () => {
-    const set = await IterableSet.new()
-
-    // Nothing in the set yet!
-    await truffleAssert.reverts(set.atIndex(0))
-
-    await set.insert(accounts[0])
-    await truffleAssert.reverts(set.atIndex(1))
-  })
-
-
 })
