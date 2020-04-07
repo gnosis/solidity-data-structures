@@ -11,7 +11,7 @@ const toHex = function(buffer) {
 }
 
 contract("Merkle", () => {
-  describe('Height 2 "all" permutations', function() {
+  describe("Height 2 all permutations", function() {
     const leaves = ["0x0", "0x1", "0x2", "0x3"].map((x) => sha256(x))
     const tree = new MerkleTree(leaves, sha256)
     const proofs = leaves.map((x) => tree.getProof(x))
