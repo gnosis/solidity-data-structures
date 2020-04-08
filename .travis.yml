@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - '10'
-cache: npm
+  - "10"
+cache: yarn
 install:
-  - npm install -g ganache-cli
-  - npm install
+  - yarn global add ganache-cli
+  - yarn --frozen-lockfile
 before_script:
   - ganache-cli > /dev/null &
 script:
-  - npm run lint
-  - npm run solhint
-  - npm test
+  - yarn lint
+  - yarn solhint
+  - yarn test
   - npx solium -d contracts/
-  - npm run coverage && cat ./coverage/lcov.info | coveralls
+  - yarn coverage && cat ./coverage/lcov.info | coveralls
