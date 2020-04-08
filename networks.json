@@ -1,13 +1,11 @@
 {
   "IdToAddressBiMap": {
     "1": {
-      "events": {},
       "links": {},
       "address": "0xED4d05496C71e71cC2A8726af1242C22108d1761",
       "transactionHash": "0xf0d183ed13c449218dc71ebf470161c4ef577cd894f5509c2bd3c54974a4a829"
     },
     "4": {
-      "events": {},
       "links": {},
       "address": "0x5c4C6bf91240A5fdBfB9a1BEd8d43227046e2feA",
       "transactionHash": "0x29d700409e29e563825570fa546c19dbbd3a318f448e0ba5da084984faddd704"
@@ -15,30 +13,26 @@
   },
   "IterableAppendOnlySet": {
     "1": {
-      "events": {},
       "links": {},
-      "address": "0xCDDB32b6Bb2808D5B5115dAab207479cE98d2636",
-      "transactionHash": "0xfd75e0ef3b318de4b00f87cd2080a4389c1dfbf9cf6b95fa83d100c80f273968"
+      "address": "0x4b3f58185baf3DC02d56f31e9901db11F7bBf6C0",
+      "transactionHash": "0xe9f3f2c8ee4805fa29417b5f0b74c771ea3c95e58a3a54fe39486ae6b5ab3817"
     },
     "4": {
-      "events": {},
       "links": {},
-      "address": "0x0D47D0548FDAD66B06E81a826EED8c687aCddBCB",
-      "transactionHash": "0x5418e7ed4b5aa066d27b482826367faf501a1a7ab30cfcdb3bb9c57b4a5d7f1c"
+      "address": "0xc3F244bDD41Ac5c0E394bB7113c9A3B93665AA8e",
+      "transactionHash": "0x187698be7ae12578b8e4ee2b25e33b9a4b4e04e34ddb16054f0bd8042bf7fa67"
     }
   },
   "Migrations": {
     "1": {
-      "events": {},
       "links": {},
-      "address": "0x9494d62f60949c8a979293430EDeB90B5B96f743",
-      "transactionHash": "0x62d3d94c459e4875ace18b14be523f649c6bb671b3c43c7061c86c34f9acfb2f"
+      "address": "0x468a3206E2cd0188aB8B1C38fFeCb54F7011d50C",
+      "transactionHash": "0x39efb1664f7936286065c3a95e3a279f578ba4b6386a01a4f8800620bc75b9a6"
     },
     "4": {
-      "events": {},
       "links": {},
-      "address": "0xa381B3277755093f68688818e2e04cA4A29bF69b",
-      "transactionHash": "0xea9adbb39f1bcf6eef9c9d8c440e8b7245608b51a1c90d5d0b404645c57d57f1"
+      "address": "0xFaEEF02AD76f474F76CF66F4773f4d285A6c2f00",
+      "transactionHash": "0x6c6da6e62a1cad9e4a3e775da88870c8c70b3e0faa52005b2a10f75d720c0c98"
     }
   }
 }
